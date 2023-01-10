@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latiihan 3 Menampilkan Tooltip Tooltip dan Poopuo (Modul 3)</title>
+    <link rel="stylesheet" type="text/css"" href="leaflet.css"/>
+    <script type="text/javascript" src="leaflet.js"></script>
+</head>
+<body>
+    <div id="mapku" style="width: 100%; height: 600px;"></div>
+</body>
+<script type="text/javascript">
+     var mymap = L.map('mapku').setView([-0.9143215094612297, 100.36451260950814],17);
+    
+     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom:18,
+        id:'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+
+    //L.marker([-0.9077332853676606, 100.44440492119863],17).bindTooltip("SMA Negeri 15 Padang").addTo(mymap); //SMA Negeri 15 Padang
+    //L.marker([-0.9019685794366737, 100.41804869466155],17).bindTooltip("SMA Negeri 16 Padang").addTo(mymap); // SMA Negeri 16 Padang
+    //L.marker([-0.8871450081102914, 100.39992878891732],17).bindTooltip("SMA Negeri 5 Padang").addTo(mymap); // SMA Negeri 5 Padang
+    //L.marker([-0.9472624468373028, 100.40239968515517],17).bindTooltip("SMA Negeri 4 Padang").addTo(mymap); // SMA Negeri 4 Padang
+    //L.marker([-0.9612622510325366, 100.37439619445954],17).bindTooltip("SMA Negeri 6 Padang").addTo(mymap); // SMA Negeri 6 Padang
+    //L.marker([-0.9143215094612297, 100.36451260950814],17).bindTooltip("SMA Negeri 10 Padang").addTo(mymap); // SMA Negeri 10 Padang
+    //L.marker([-0.9121497932475564, 100.42539103991871],17).bindTooltip("SMA Negeri 9 Padang").addTo(mymap); // SMA Negeri 9 Padang
+    //L.marker([-0.8942992279664446, 100.38007243931487],17).bindTooltip("SMA Negeri 12 Padang").addTo(mymap); // SMA Negeri 12 Padang
+    //L.marker([-0.92593917317898, 100.35256142040953],17).bindTooltip("SMA Negeri 2 Padang").addTo(mymap); // SMA Negeri 2 Padang
+    //L.marker([-0.9032245211864477, 100.35466655748469],17).bindTooltip("SMA Negeri 1 Padang").addTo(mymap); // SMA Negeri 1 Padang
+
+
+        
+    var LeafIcon = L.Icon.extend ({
+       options: {
+            iconSize: [36,36]
+       }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma15 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipOwsyiEzlIDADY_oaIFCh0treyYunbGCFhN03By=w408-h544-k-no" width="250px" height="100px"></p><p>SMA Negeri 15 Padang merupakan sekolah menengah atas negeri yang ada di Padang, yang beralamat di Jalan Limau Manis, Kec. Pauh, Padang, Sumatra Barat</p>';
+    L.marker([-0.9077332853676606, 100.44440492119863] , {icon: sekolahicon}).bindTooltip("SMA Negeri 15 Padang").bindPopup(info_sma15).addTo(mymap);
+
+    
+    var KoordinatSMA15 = [
+            [-0.929540, 100.447055],
+            [-0.929108, 100.447578],
+            [-0.928814, 100.448169],
+            [-0.928482, 100.447997],
+            [-0.928234, 100.447870],
+            [-0.928398, 100.447245],
+            [-0.928361, 100.447197],
+            [-0.928423, 100.446546],
+            [-0.929540, 100.447055],
+   ];
+   var info_sma15= L.polygon(KoordinatSMA15,{color: 'green'}).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma16 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipOXwEeisoGrI2Ugvkpsz0QDU7P7Eddc1shAcmen=w408-h306-k-no" width="250px" height="100px"></p><p>SMA Negeri 16 Padang merupakan salah satu SMA Negeri yang ada di Padang, yang beralamat di Jl. Bukit Napa Kuranji Kec. Kuranji Padang, Sumatra Barat. Sama dengan SMA pada umumnya di Indonesia masa pendidikan sekolah di SMA Negeri 16 Padang ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII.</p>';
+    L.marker([-0.9019685794366737, 100.41804869466155] , {icon: sekolahicon}).bindTooltip("SMA Negeri 16 Padang").bindPopup(info_sma16).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma5 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipNarHJr5valNjY4ZKp1MK9R9fM1Rg2yGv5QzA8u=w408-h424-k-no" width="250px" height="100px"></p><p>SMA Negeri 5 Padang, merupakan salah satu Sekolah Menengah Atas Negeri yang ada di Provinsi Sumatra Barat, Indonesia. Sama dengan SMA pada umumnya di Indonesia masa pendidikan sekolah di SMAN 5 Padang ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII.</p>';
+    L.marker([-0.8871450081102914, 100.39992878891732] , {icon: sekolahicon}).bindTooltip("SMA Negeri 5 Padang").bindPopup(info_sma5).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma4 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipMYsdVGm8hewmf6jMBoi7676Zp_5h_TgBZtbMrw=w426-h240-k-no" width="250px" height="100px"></p><p>SMA Negeri 4 Padang adalah sekolah menengah atas negeri yang terletak di Kelurahan Lubuk Begalung Nan XX, Kecamatan Lubuk Begalung, Kota Padang. Sekolah ini beralamat di Jalan Linggarjati Nomor 1, yang merupakan ujung dari Jalan Dalam Gaduang yang dimulai dari Simpang Tugu Lubuk Begalung.</p>';
+    L.marker([-0.9472624468373028, 100.40239968515517] , {icon: sekolahicon}).bindTooltip("SMA Negeri 4 Padang").bindPopup(info_sma4).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma6 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipOwPiPNWWZ9rjFVQ6cVW7gUOJ5wafAhAea-yFGc=w408-h306-k-no" width="250px" height="100px"></p><p>SMA Negeri 6 Padang merupakan salah satu sekolah menengah atas negeri yang beralamat di Jalan Sutan Syahrir Nomor 11, Mata Air, Padang Selatan, Padang, Sumatra Barat.</p>';
+    L.marker([-0.9612622510325366, 100.37439619445954] , {icon: sekolahicon}).bindTooltip("SMA Negeri 6 Padang").bindPopup(info_sma6).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma10 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipMR4VxqL6-vuuhnZuNoS8Z9uzwKDmuiZEVxqmby=w408-h725-k-no" width="250px" height="100px"></p><p>SMA Negeri 10 Padang terletak di Kelurahan Jati, Kecamatan Padang Timur, Kota Padang, Sumatra Barat. Sekolah ini beralamat tanpa nomor di Jalan Situjuh, beberapa meter ke arah timur dari Jalan Sudirman, Padang.</p>';
+    L.marker([-0.9143215094612297, 100.36451260950814] , {icon: sekolahicon}).bindTooltip("SMA Negeri 10 Padang").bindPopup(info_sma10).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma9 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipMsMqM0tZIOM0wsSJhfLSbVS6LaYuPYn69vL95G=w408-h543-k-no" width="250px" height="100px"></p><p>SMA Negeri 9 Padang, merupakan salah satu sekolah menengah atas negeri yang ada di Provinsi Sumatra Barat, Indonesia. Sama dengan SMA pada umumnya di Indonesia masa pendidikan sekolah di SMA Negeri 9 Padang ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII.</p>';
+    L.marker([-0.9121497932475564, 100.42539103991871] , {icon: sekolahicon}).bindTooltip("SMA Negeri 9 Padang").bindPopup(info_sma9).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma12 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipOsWy-P5Oj-06lotuv56qy_WwPInp0yHQgM0PYS=w408-h306-k-no" width="250px" height="100px"></p><p>SMA Negeri 12 Padang, merupakan salah satu Sekolah Menengah Atas Negeri yang ada di Provinsi Sumatra Barat, Indonesia. Sama dengan SMA pada umumnya di Indonesia masa pendidikan sekolah di SMAN 12 Padang ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII.</p>';
+    L.marker([-0.8942992279664446, 100.38007243931487] , {icon: sekolahicon}).bindTooltip("SMA Negeri 12 Padang").bindPopup(info_sma12).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma2 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipNsnsm3x5VGNfJEcO2C0swZo9fXkKPjOC7McumP=w426-h240-k-no" width="250px" height="100px"></p><p>SMA Negeri 2 Padang adalah sekolah menengah atas negeri yang berada di Jalan Musi Nomor 2, Purus Atas, Padang, Sumatra Barat. SMA Negeri 2 padang merupakan salah satu sekolah favorit di Kota Padang khususnya dan di Sumatra Barat umumnya. Beberapa tokoh nasional pernah bersekolah di sini.</p>';
+    L.marker([-0.92593917317898, 100.35256142040953] , {icon: sekolahicon}).bindTooltip("SMA Negeri 2 Padang").bindPopup(info_sma2).addTo(mymap);
+
+
+    var LeafIcon = L.Icon.extend ({
+        options: {
+                iconSize: [36,36]
+        }
+    });
+    var sekolahicon = new LeafIcon({iconUrl: 'images/sekolah.png'});
+    var info_sma1 = '<p style="text-align: center;"> <img src="https://lh5.googleusercontent.com/p/AF1QipPjZObhqW_WH6_9PexT2dRJCHWK2V4y5v7r7omW=w424-h240-k-no" width="250px" height="100px"></p><p>SMA Negeri 1 Padang adalah salah satu sekolah menengah atas berstatus negeri yang terletak di Kelurahan Lolong Belanti, Kecamatan Padang Utara, Kota Padang, Sumatra Barat. Sekolah ini beralamat di Jalan Belanti Raya No. 11, beberapa puluh meter ke arah barat dari Jalan Khatib Sulaiman, Padang.</p>';
+    L.marker([-0.9032245211864477, 100.35466655748469] , {icon: sekolahicon}).bindTooltip("SMA Negeri 1 Padang").bindPopup(info_sma1).addTo(mymap);
+
+
+
+</script>
+</html>
